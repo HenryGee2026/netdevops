@@ -1,0 +1,13 @@
+---
+- name: PLAY - Update NTP Configurations
+  hosts: ios
+
+  tasks:
+    - name: Configure NTP
+      cisco.ios.ios_ntp_global:    
+        config:                    
+          servers:
+            - server: 10.80.60.52
+              source: GigabitEthernet0/1
+          logging: false
+        state: merged      
