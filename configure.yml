@@ -1,0 +1,16 @@
+---
+- name: Configure Hostname on Cisco 2900 Router
+  hosts: ios
+  gather_facts: false
+  connection: ansible.netcommon.network_cli
+
+  tasks:
+    - name: Set Device Name
+      cisco.ios.ios_hostname:
+        config:
+          hostname: fatboy
+      register: result
+
+    - name: Print Configuration Output
+      ansible.builtin.debug:
+        var: result.commands
