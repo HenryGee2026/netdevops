@@ -1,9 +1,0 @@
----
-- name: Ansible Playbook to gather information from IOS Devices
-  hosts: ios
-  gather_facts: yes
-
-  tasks:
-    - name: print facts
-      debug:
-        msg: "{{ ansible_facts }}"
