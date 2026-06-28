@@ -1,7 +1,0 @@
----
-- hosts: all
-  tasks:
-    - name: print interfaces
-      debug:
-        msg: "{{ ansible_interfaces }}"
-      
